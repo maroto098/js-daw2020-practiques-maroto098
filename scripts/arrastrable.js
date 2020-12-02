@@ -5,8 +5,11 @@ window.onload = () => {
   capa1.addEventListener('drag', trasparentar, false);
   capa1.addEventListener('dragend', opacar, false);
 
-  capa2.addEventListener('dragover', fondoRojo, false);
+  capa2.addEventListener('dragenter', fondoRojo, false);
   capa2.addEventListener('dragleave', fondoBlanco, false);
+  capa2.addEventListener('dragover', function (e) {
+    e.preventDefault();
+  });
   capa2.addEventListener('drop', success, false);
 
   function success() {
